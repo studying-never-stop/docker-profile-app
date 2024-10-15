@@ -19,7 +19,7 @@ services:
       - mongodb
 
   mongodb:
-    container_name: mongoDB
+    container_name: database
     image: mongo:8.0-rc
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
@@ -38,7 +38,7 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=secret
-      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_SERVER=database
     networks:
        - profile-network
     depends_on:
